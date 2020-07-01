@@ -41,8 +41,9 @@ $version = Calculate-Version -preRelease alpha -preReleaseNumber 2
 - More tests and case studies.
 - Possible implementation with other scripting languages.
 
-Inspired ❤️[GitVersion] [SemVer]
+---
 
+Inspired ❤️ [GitVersion] [SemVer]
 
 [GitVersion]: https://github.com/GitTools/GitVersion
 [SemVer]: https://semver.org/
