@@ -21,6 +21,7 @@ $version = Calculate-Version -autoIncrementLevel minor -preRelease alpha -preRel
 - Simple pre-release calculation based on last tag.
 - No dependencies to install. Only one function to copy in final script.
 - Support of custom prefixes `[v*]`, `[something-*]` of version.
+- Support for Bash and Powershell.
 
 ## Motivation
 
@@ -31,7 +32,9 @@ $version = Calculate-Version -autoIncrementLevel minor -preRelease alpha -preRel
 ## Compatibility
 
 - Ready to use with GitLab CI/CD.
-- Tested on Windows and Powershell 7.
+- Tested on:
+  - Windows and Powershell 7,
+  - Ubuntu 18.04 and Bash/Powershel 7.
 
 ## Limitation
 
@@ -43,7 +46,6 @@ $version = Calculate-Version -autoIncrementLevel minor -preRelease alpha -preRel
 
 - SemVer strict mode.
 - More possibilities to define parts of veresion based on SemVer.
-- More capabilities. Not only Powershell and Windows ;).
 - More case studies.
 - Possible implementation with other scripting languages.
 
@@ -61,7 +63,13 @@ Please check a page with issues and add new one with your suggestions, then crea
 Tests are write with [Pester] which is a great tool to testing scripts written in PowerShell.
 Before start work tests, required is installation Pester's module ([Pester: Installation Guide]);
 
-To run test on PowerShell console run:
+To run tests on PowerShell console for PowerShell's version run:
+
+```powershell
+Invoke-Pester -Script ./SimpleGitVersion.Tests.ps1
+```
+
+To run tests on PowerShell console for Bash's version run:
 
 ```powershell
 Invoke-Pester -Script ./SimpleGitVersion.Tests.ps1
