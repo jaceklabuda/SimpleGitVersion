@@ -4,6 +4,8 @@ Simple version calculation without additional installers and other dependencies.
 
 ## Usage
 
+Powershell
+
 ```powershell
 $version = Calculate-Version
 # 2.1.0
@@ -12,6 +14,17 @@ $version = Calculate-Version -autoIncrementLevel minor
 # 2.2.0
 
 $version = Calculate-Version -autoIncrementLevel minor -preRelease alpha -preReleaseNumber 2
+# 2.2.0-alpha.2
+```
+
+Bash
+
+```sh
+./SimpleGitVersion.sh
+# 2.1.0
+./SimpleGitVersion.sh -l minor
+# 2.2.0
+./SimpleGitVersion.sh -r alpha -n 2 -l minor
 # 2.2.0-alpha.2
 ```
 
