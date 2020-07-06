@@ -4,7 +4,7 @@ function Calculate-Version
     Param 
     ( 
         [Parameter(Mandatory=$false)]
-        [string]$prefix='',
+        [string]$prefix,
         [Parameter(Mandatory=$false)]
         [string]$preRelease,        
         [Parameter(Mandatory=$false)] 
@@ -19,9 +19,14 @@ function Calculate-Version
 
         $result = Invoke-Expression $command
         
-        if ($result.length -ne 0 -and $prefix.length -ne 0)
+        if ($result.length -ne 0)
         {
-            $version = $result.replace($prefix, '')
+            $version = $result
+        } 
+        
+        if ($prefix.length -ne 0)
+        {
+            $version = $version.replace($prefix, '')
         }        
 
         if ($result.length -ne 0 -and $autoIncrementLevel.length -ne 0)

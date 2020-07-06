@@ -4,7 +4,7 @@
 
 . ./SimpleGitVersion.ps1
 
-$version = Calculate-Version -preRelease alpha -preReleaseNumber 2
+$version = Calculate-Version -preRelease alpha -preReleaseNumber 2 -autoIncrementLevel minor
 
 Write-Host $version
 
